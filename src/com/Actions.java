@@ -57,6 +57,7 @@ public class Actions {
                      System.out.println("Тут будет список и действия с записями");
                      break;
                  case ("exit"):
+                     System.out.println("Exit program...");
                      System.exit(0);
                      break;
                  default:

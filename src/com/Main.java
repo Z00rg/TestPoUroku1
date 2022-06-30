@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-//        Authentification.authentificate();
+       Authentification.authentificate();
        Actions actions = new Actions();
 
 
