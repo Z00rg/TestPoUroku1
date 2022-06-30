@@ -4,8 +4,6 @@ import java.util.ArrayList;
 
 public class Doctors extends Actions{ //заприватить переменные
 
-   private static ArrayList<String> doctors = new ArrayList<>();
-
     public static void setDoctors() { //добавление докторов
         System.out.print("Напишите ФИО врача для добавления: ");
         String name = s.nextLine();
@@ -28,8 +26,8 @@ public class Doctors extends Actions{ //заприватить переменные
             getDoctors();
             System.out.print("Напишите номер доктора по списку, начиная с 0, фио которого хотите изменить: ");
             int number = s.nextInt();
-            System.out.println("Вы изменяете врача: " + doctors.get(number)); //не работает
-            System.out.print("Напишите новое фио доктора: "); //после этой фразы сразу выводиться та, с первой строчки метода
+            System.out.println("Вы изменяете врача: " + doctors.get(number));
+            System.out.print("Напишите новое фио доктора: ");
             String name = s.nextLine();
             name = s.nextLine();
             doctors.set(number, name);

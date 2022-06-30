@@ -2,12 +2,15 @@ package com;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
 
 public class Actions {
 
 
+    protected static ArrayList<String> patients = new ArrayList<>();
+    protected static ArrayList<String> doctors = new ArrayList<>();
     protected static Scanner s = new Scanner(System.in);
 
      public Actions() {
@@ -19,37 +22,41 @@ public class Actions {
      public void setCommand() {
          System.out.print("Напишите команду: ");
          String command = s.nextLine();
-         for(int i = 0; i < 10; i++) { //написать цикл для вывода списка команд заного
+
              switch (command) {
                  case ("help"): // вызов хелп листа
                      helpList();
                      setCommand();
                      break;
-                 case ("actionSetPatients"): //добавление пациента
+                 case ("1"): //добавление пациента
                      Patients.setPatients();
                      setCommand();
                      break;
-                 case ("actionGetPatients")://вывод массива пациентов
+                 case ("2")://вывод массива пациентов
                      Patients.getPatients();
                      setCommand();
                      break;
-                 case ("actionRemovePatients")://удаление пациента
+                 case ("3")://удаление пациента
                      Patients.removePatients();
                      setCommand();
                      break;
-                 case ("actionSetDoctors"): //добавление доктора
+                 case ("4")://смена фио пациента
+                     Patients.changePatients();
+                     setCommand();
+                     break;
+                 case ("6"): //добавление доктора
                      Doctors.setDoctors();
                      setCommand();
                      break;
-                 case ("actionGetDoctors"): //вывод массива с докторами
+                 case ("5"): //вывод массива с докторами
                      Doctors.getDoctors();
                      setCommand();
                      break;
-                 case ("actionChangeDoctors"): //изменение фио доктора
+                 case ("7"): //изменение фио доктора
                      Doctors.changeDoctors();
                      setCommand();
                      break;
-                 case ("actionRemoveDoctors"): //удаление фио доктора
+                 case ("8"): //удаление фио доктора
                      Doctors.removeDoctors();
                      setCommand();
                      break;
@@ -57,26 +64,27 @@ public class Actions {
                      System.out.println("Тут будет список и действия с записями");
                      break;
                  case ("exit"):
-                     System.out.println("Exit program...");
+                     System.out.println("Exiting program...");
                      System.exit(0);
                      break;
                  default:
                      System.out.println("Вы ввели неправильную команду");
                      setCommand();
              }
-         }
+
 
      }
 
 
      public void helpList() {
-         System.out.println("Для добавления пациентов: actionSetPatients");
-         System.out.println("Для вывода списка пациентов: actionGetPatients");
-         System.out.println("Для вывода списка пациентов: actionRemovePatients");
-         System.out.println("Для добавления докторов: actionSetDoctors");
-         System.out.println("Для изменения докторов: actionChangeDoctors");
-         System.out.println("Для добавления докторов: actionRemoveDoctors");
-         System.out.println("Для вывода списка докторов: actionGetDoctors");
+         System.out.println("Для добавления пациентов: 1");
+         System.out.println("Для вывода списка пациентов: 2");
+         System.out.println("Для удаления пациентов: 3");
+         System.out.println("Для смены фио пациентов: 4");
+         System.out.println("Для вывода списка докторов: 5");
+         System.out.println("Для добавления докторов: 6");
+         System.out.println("Для изменения докторов: 7");
+         System.out.println("Для удаления докторов: 8");
          System.out.println("Работа с записями на прием: actionAppointment");
          System.out.println("Закончить работу: exit");
 
