@@ -9,8 +9,8 @@ import java.util.Scanner;
 public class Actions {
 
 
-    protected static ArrayList<String> patients = new ArrayList<>();
-    protected static ArrayList<String> doctors = new ArrayList<>();
+    protected static final ArrayList<String> patients = new ArrayList<>();
+    protected static final ArrayList<String> doctors = new ArrayList<>();
     protected static Scanner s = new Scanner(System.in);
 
      public Actions() {
@@ -60,8 +60,13 @@ public class Actions {
                      Doctors.removeDoctors();
                      setCommand();
                      break;
-                 case ("actionAppointment"): //место под операции с записями
-                     System.out.println("Тут будет список и действия с записями");
+                 case ("9"): //добавление приема
+                     Appointment.setAppointments();
+                     setCommand();
+                     break;
+                 case ("10"): //выдача всех приемов
+                     Appointment.getAppointments();
+                     setCommand();
                      break;
                  case ("exit"):
                      System.out.println("Exiting program...");
@@ -77,15 +82,16 @@ public class Actions {
 
 
      public void helpList() {
-         System.out.println("Для добавления пациентов: 1");
+         System.out.println("Для добавления нового пациента: 1");
          System.out.println("Для вывода списка пациентов: 2");
          System.out.println("Для удаления пациентов: 3");
          System.out.println("Для смены фио пациентов: 4");
          System.out.println("Для вывода списка докторов: 5");
-         System.out.println("Для добавления докторов: 6");
+         System.out.println("Для добавления нового доктора: 6");
          System.out.println("Для изменения докторов: 7");
          System.out.println("Для удаления докторов: 8");
-         System.out.println("Работа с записями на прием: actionAppointment");
+         System.out.println("Для добавления нового приема: 9");
+         System.out.println("Для вывода списка приемов: 10");
          System.out.println("Закончить работу: exit");
 
      }
