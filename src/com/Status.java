@@ -9,7 +9,7 @@ public class Status extends Appointment { //класс дл€ выбора статуса
     private static final ArrayList<Integer> idStatus = new ArrayList<>();
     private static final ArrayList<String> typeStatus = new ArrayList<>();
 
-    private static void setStatus() { // поставновка статусов
+    private static void setStatus() { // постановка статусов
         typeStatus.add("Ќовый");
         typeStatus.add("¬ процессе");
         typeStatus.add("ќтменен");
@@ -20,7 +20,7 @@ public class Status extends Appointment { //класс дл€ выбора статуса
         }
     }
 
-    private static void getStatus() { //метод выдачи статусов с проверкой на пустоту и использованием метода добавлени€
+    private static String getStatus() { //метод выдачи статусов с проверкой на пустоту и использованием метода добавлени€
         if(idStatus.isEmpty()) {
             setStatus();
             for (int i = 0; i < idStatus.size(); i++) {
@@ -33,9 +33,10 @@ public class Status extends Appointment { //класс дл€ выбора статуса
                 System.out.print(" ¬ид статуса: " + typeStatus.get(i) + "\n");
             }
         }
+        return(" онец списка");
     }
 
-    public static void choiceStatus() { //функци€ выбора статуса и поставновки его в нужный прием по id из класса Appointments
+    public static void choiceStatus() { //функци€ выбора статуса и постановки его в нужный прием по id из класса Appointments
         getStatus();
         System.out.print("¬ыберете новый статус по ID: ");
         int number = s.nextInt();

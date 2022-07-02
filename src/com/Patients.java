@@ -48,7 +48,7 @@ public class Patients extends Actions {
             System.out.print(" ФИО: " + patients.get(i));
             System.out.print(" Дата регистрации: " + datePatients.get(i) + "\n");
         }
-        return("");
+        return("Конец списка");
     }
 
     public static String getDate() { //метод для получения сегодняшней даты в нужном формате

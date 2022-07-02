@@ -24,7 +24,7 @@ public class Doctors extends Actions{
                 System.out.print(" Initials: " + doctors.get(i) + "\n");
             }
         }
-        return("");
+        return("Конец списка");
     }
 
     public static void changeDoctors() { //изменение докторов

@@ -7,7 +7,7 @@ import java.util.Date;
 
 
 public class Appointment extends Actions {
-    static int id;
+    protected static int id;
     private static final ArrayList<Integer> appointmentId = new ArrayList<>();
     private static final ArrayList<String> appointmentPatients = new ArrayList<>();
     private static final ArrayList<String> appointmentDoctors = new ArrayList<>();
@@ -15,12 +15,12 @@ public class Appointment extends Actions {
     protected static final ArrayList<String> status = new ArrayList<>();
 
     public static void setAppointments() { //метод для добавления нового приема пациента к врачу
-        System.out.println("Список зарегестрированных пациентов: ");
-        System.out.println(Patients.getPatients());
-        System.out.print("Введите id пациента для записи: "); //сюда можно добавить защиту от введения строки, а не цифры, и в другие также
+        System.out.println("Список зарегистрированных пациентов: ");
+        Patients.getPatients();
+        System.out.print("Введите id пациента для записи: ");
         int number = s.nextInt();
         System.out.println("Список докторов: ");
-        System.out.println(Doctors.getDoctors());
+        Doctors.getDoctors();
         System.out.print("Введите id доктора для записи: ");
         int id = s.nextInt();
         System.out.print("Введите время записи на прием в формате \"dd-MM HH:mm\": ");
@@ -37,22 +37,14 @@ public class Appointment extends Actions {
             status.add("Новый");
             int idAppointments = appointmentDoctors.size();
             appointmentId.add(idAppointments - 1);
-
+            System.out.println("Вы добавили запись пациента успешно добавили запись на прием");
         }
     }
 
-    public void setId(int id) { //сеттер для id
-        this.id = id;
-    }
-
-    public static int getId() { //геттер для id
-        return id;
-    }
     public static void changeAppointments() {
         getAppointments();
         System.out.print("Напишите ID приема, статус которого хотите изменить: ");
         id = s.nextInt();
-        getId();
         if(id + 1 > appointmentId.size()){ //метод для защиты от ошибки при вводе числа больше размера массива
             System.out.println("Вы ввели неправильный id, которого нет в таблицах, попробуйте еще раз");
         } else {
@@ -81,7 +73,7 @@ public class Appointment extends Actions {
 
     }
 
-    public static void getAppointments() { //метод для получения списка приемов пациентов к врачам
+    public static String getAppointments() { //метод для получения списка приемов пациентов к врачам
         if (appointmentDoctors.isEmpty()) {
             System.out.println("Таблица пустая, сначала добавьте данные в таблицу");
         } else {
@@ -94,7 +86,7 @@ public class Appointment extends Actions {
             }
         }
 
-
+        return("Конец списка");
 
     }
 }
