@@ -74,6 +74,4 @@ public class Patients extends Actions {
     }
 
 
-
-
 }

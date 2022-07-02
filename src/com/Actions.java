@@ -96,13 +96,6 @@ public class Actions {
 
      }
 
-     public void actionAdd() {
-         //сюда написать метод для переписывания в классы дети, действия по таблицам
-     }
 
-     public void setDate() {
-         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-         Date date = new Date();
-         System.out.println(dateFormat.format(date));
-     }
+
 }
