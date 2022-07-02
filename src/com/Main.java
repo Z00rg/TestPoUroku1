@@ -1,10 +1,5 @@
 package com;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Scanner;
-
 
 //Думаю, что этот код достаточно можно подсократить, даже знаю в некоторых местах как, но времени на это немного не хватило)
 //Сделал немного больше чем в тз, добавил в каждую таблицу изменение, удаление, добавление и выдачу + у каждого массива

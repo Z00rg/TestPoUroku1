@@ -1,9 +1,7 @@
 package com;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
+
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.Scanner;
 
 public class Actions {
@@ -27,59 +25,45 @@ public class Actions {
                  case ("help"): // вызов хелп листа
                      helpList();
                      setCommand();
-                     break;
                  case ("1"): //добавление пациента
                      Patients.setPatients();
                      setCommand();
-                     break;
                  case ("2")://вывод массива пациентов
                      Patients.getPatients();
                      setCommand();
-                     break;
                  case ("3")://удаление пациента
                      Patients.removePatients();
                      setCommand();
-                     break;
                  case ("4")://смена фио пациента
                      Patients.changePatients();
                      setCommand();
-                     break;
                  case ("5"): //вывод массива с докторами
                      Doctors.getDoctors();
                      setCommand();
-                     break;
                  case ("6"): //добавление доктора
                      Doctors.setDoctors();
                      setCommand();
-                     break;
                  case ("7"): //изменение фио доктора
                      Doctors.changeDoctors();
                      setCommand();
-                     break;
                  case ("8"): //удаление фио доктора
                      Doctors.removeDoctors();
                      setCommand();
-                     break;
                  case ("9"): //добавление приема
                      Appointment.setAppointments();
                      setCommand();
-                     break;
                  case ("10"): //выдача всех приемов
                      Appointment.getAppointments();
                      setCommand();
-                     break;
                  case ("11"): //изменение статуса приема
                      Appointment.changeAppointments();
                      setCommand();
-                     break;
                  case ("12"): //удаление приема
                      Appointment.removeAppointments();
                      setCommand();
-                     break;
                  case ("exit"):
                      System.out.println("Exiting program...");
                      System.exit(0);
-                     break;
                  default:
                      System.out.println("Вы ввели неправильную команду");
                      setCommand();

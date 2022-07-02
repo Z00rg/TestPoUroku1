@@ -27,7 +27,7 @@ public class Doctors extends Actions{
         return(" онец списка");
     }
 
-    public static void changeDoctors() { //изменение докторов
+    public static void changeDoctors() { //изменение докторов не знаю зачем это может понадобитьс€ в реальности, но € его сделал)
         if (doctors.isEmpty()) { //проверка на пустоту таблицы
             System.out.println("“аблица пуста€, сначала добавьте данные в таблицу");
         } else {
