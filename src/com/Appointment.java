@@ -7,19 +7,20 @@ import java.util.Date;
 
 
 public class Appointment extends Actions {
-
+    static int id;
     private static final ArrayList<Integer> appointmentId = new ArrayList<>();
     private static final ArrayList<String> appointmentPatients = new ArrayList<>();
     private static final ArrayList<String> appointmentDoctors = new ArrayList<>();
     private static final ArrayList<String> time = new ArrayList<>();
-    private static final ArrayList<String> status = new ArrayList<>();
+    protected static final ArrayList<String> status = new ArrayList<>();
 
     public static void setAppointments() { //метод для добавления нового приема пациента к врачу
         System.out.println("Список зарегестрированных пациентов: ");
         System.out.println(Patients.getPatients());
-        System.out.print("Введите id пациента для записи: ");
+        System.out.print("Введите id пациента для записи: "); //сюда можно добавить защиту от введения строки, а не цифры, и в другие также
         int number = s.nextInt();
-        System.out.println("Список докторов: " + Doctors.getDoctors());
+        System.out.println("Список докторов: ");
+        System.out.println(Doctors.getDoctors());
         System.out.print("Введите id доктора для записи: ");
         int id = s.nextInt();
         System.out.print("Введите время записи на прием в формате \"dd-MM HH:mm\": ");
@@ -40,21 +41,29 @@ public class Appointment extends Actions {
         }
     }
 
+    public void setId(int id) { //сеттер для id
+        this.id = id;
+    }
+
+    public static int getId() { //геттер для id
+        return id;
+    }
     public static void changeAppointments() {
         getAppointments();
-        System.out.print("Напишите ID приема статус которого хотите изменить: ");
-        int id = s.nextInt();
+        System.out.print("Напишите ID приема, статус которого хотите изменить: ");
+        id = s.nextInt();
+        getId();
         if(id + 1 > appointmentId.size()){ //метод для защиты от ошибки при вводе числа больше размера массива
             System.out.println("Вы ввели неправильный id, которого нет в таблицах, попробуйте еще раз");
         } else {
             System.out.println("Статус приема сейчас: " + status.get(id));
-
+            Status.choiceStatus();
         }
     }
 
     public static void removeAppointments() { //метод удаления приема
         getAppointments();
-        System.out.println("Напишите ID приема который хотите удалить: ");
+        System.out.print("Напишите ID приема который хотите удалить: ");
         int number = s.nextInt();
         if (number + 1 > appointmentId.size()) { //метод для защиты от ошибки при вводе числа больше размера массива
             System.out.println("Вы ввели неправильный id, которого нет в таблицах, попробуйте еще раз");

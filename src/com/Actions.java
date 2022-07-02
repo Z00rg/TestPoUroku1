@@ -44,12 +44,12 @@ public class Actions {
                      Patients.changePatients();
                      setCommand();
                      break;
-                 case ("6"): //добавление доктора
-                     Doctors.setDoctors();
-                     setCommand();
-                     break;
                  case ("5"): //вывод массива с докторами
                      Doctors.getDoctors();
+                     setCommand();
+                     break;
+                 case ("6"): //добавление доктора
+                     Doctors.setDoctors();
                      setCommand();
                      break;
                  case ("7"): //изменение фио доктора
@@ -66,6 +66,14 @@ public class Actions {
                      break;
                  case ("10"): //выдача всех приемов
                      Appointment.getAppointments();
+                     setCommand();
+                     break;
+                 case ("11"): //изменение статуса приема
+                     Appointment.changeAppointments();
+                     setCommand();
+                     break;
+                 case ("12"): //удаление приема
+                     Appointment.removeAppointments();
                      setCommand();
                      break;
                  case ("exit"):
@@ -92,6 +100,8 @@ public class Actions {
          System.out.println("Для удаления докторов: 8");
          System.out.println("Для добавления нового приема: 9");
          System.out.println("Для вывода списка приемов: 10");
+         System.out.println("Для изменение статуса приема: 11");
+         System.out.println("Для удаления приема: 12");
          System.out.println("Закончить работу: exit");
 
      }
