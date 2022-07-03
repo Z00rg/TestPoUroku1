@@ -15,16 +15,15 @@ public class Doctors extends Actions{
         System.out.println("Вы добавили доктора: " + name);
     }
 
-    public static String getDoctors() { //вывод докторов
+    public static void getDoctors() { //вывод докторов
         if (doctors.isEmpty()) { //проверка на пустоту таблицы
             System.out.println("Таблица пустая, сначала добавьте данные в таблицу");
         } else {
             for(int i = 0; i < doctors.size(); i++) {
                 System.out.print("ID: " + idDoctors.get(i));
-                System.out.print(" Initials: " + doctors.get(i) + "\n");
+                System.out.print(" ФИО доктора: " + doctors.get(i) + "\n");
             }
         }
-        return("Конец списка");
     }
 
     public static void changeDoctors() { //изменение докторов не знаю зачем это может понадобиться в реальности, но я его сделал)
@@ -37,7 +36,7 @@ public class Doctors extends Actions{
             if(number + 1 > idDoctors.size()){ //метод для защиты от ошибки при вводе числа больше размера массива
                 System.out.println("Вы ввели неправильный id, которого нет в таблицах, попробуйте еще раз");
             } else {
-                System.out.println("Вы изменяете врача: " + doctors.get(number));
+                System.out.println("Вы изменяете доктора: " + doctors.get(number));
                 System.out.print("Напишите новое фио доктора: ");
                 String name = s.nextLine();
                 name = s.nextLine();
@@ -56,7 +55,7 @@ public class Doctors extends Actions{
             if(number + 1 > idDoctors.size()){ //метод для защиты от ошибки при вводе числа больше размера массива
                 System.out.println("Вы ввели неправильный id, которого нет в таблицах, попробуйте еще раз");
             } else {
-        System.out.println("Вы удаляете фио: " + doctors.get(number));
+        System.out.println("Вы удаляете: " + doctors.get(number));
         doctors.remove(number);
         idDoctors.remove(number);
         for(int i = number; i < idDoctors.size(); i++) {

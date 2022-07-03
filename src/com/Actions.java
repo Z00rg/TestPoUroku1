@@ -7,8 +7,10 @@ import java.util.Scanner;
 public class Actions {
 
 
-    protected static final ArrayList<String> patients = new ArrayList<>();
-    protected static final ArrayList<String> doctors = new ArrayList<>();
+    protected static final ArrayList<String> patients = new ArrayList<>(); //массив пациентов
+    protected static final ArrayList<String> doctors = new ArrayList<>(); //массив врачей
+    protected static final ArrayList<String> typePet = new ArrayList<>(); //тип питомцев
+    protected static final ArrayList<String> namePet = new ArrayList<>(); //клички питомцев
     protected static Scanner s = new Scanner(System.in);
 
      public Actions() {
@@ -31,17 +33,17 @@ public class Actions {
                  case ("2")://вывод массива пациентов
                      Patients.getPatients();
                      setCommand();
-                 case ("3")://удаление пациента
-                     Patients.removePatients();
-                     setCommand();
-                 case ("4")://смена фио пациента
+                 case ("3")://смена фио пациента
                      Patients.changePatients();
                      setCommand();
-                 case ("5"): //вывод массива с докторами
-                     Doctors.getDoctors();
+                 case ("4")://удаление пациента
+                     Patients.removePatients();
                      setCommand();
-                 case ("6"): //добавление доктора
+                 case ("5"): //добавление доктора
                      Doctors.setDoctors();
+                     setCommand();
+                 case ("6"): //вывод массива с докторами
+                     Doctors.getDoctors();
                      setCommand();
                  case ("7"): //изменение фио доктора
                      Doctors.changeDoctors();
@@ -76,10 +78,10 @@ public class Actions {
      public void helpList() {
          System.out.println("Для добавления нового пациента: 1");
          System.out.println("Для вывода списка пациентов: 2");
-         System.out.println("Для удаления пациентов: 3");
-         System.out.println("Для смены фио пациентов: 4");
-         System.out.println("Для вывода списка докторов: 5");
-         System.out.println("Для добавления нового доктора: 6");
+         System.out.println("Для смены фио пациентов: 3");
+         System.out.println("Для удаления пациентов: 4");
+         System.out.println("Для добавления нового доктора: 5");
+         System.out.println("Для вывода списка докторов: 6");
          System.out.println("Для изменения докторов: 7");
          System.out.println("Для удаления докторов: 8");
          System.out.println("Для добавления нового приема: 9");

@@ -6,8 +6,8 @@ import java.util.Scanner;
 public class Status extends Appointment { //класс для выбора статуса
 
     protected static Scanner s = new Scanner(System.in);
-    private static final ArrayList<Integer> idStatus = new ArrayList<>();
-    private static final ArrayList<String> typeStatus = new ArrayList<>();
+    private static final ArrayList<Integer> idStatus = new ArrayList<>(); //id статусов
+    private static final ArrayList<String> typeStatus = new ArrayList<>();//виды статусов
 
     private static void setStatus() { // постановка статусов
         typeStatus.add("Новый");
@@ -20,7 +20,7 @@ public class Status extends Appointment { //класс для выбора статуса
         }
     }
 
-    private static String getStatus() { //метод выдачи статусов с проверкой на пустоту и использованием метода добавления
+    private static void getStatus() { //метод выдачи статусов с проверкой на пустоту и использованием метода добавления
         if(idStatus.isEmpty()) {
             setStatus();
             for (int i = 0; i < idStatus.size(); i++) {
@@ -33,7 +33,6 @@ public class Status extends Appointment { //класс для выбора статуса
                 System.out.print(" Вид статуса: " + typeStatus.get(i) + "\n");
             }
         }
-        return("Конец списка");
     }
 
     public static void choiceStatus() { //функция выбора статуса и постановки его в нужный прием по id из класса Appointments
