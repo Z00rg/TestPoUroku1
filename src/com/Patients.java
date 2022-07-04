@@ -40,9 +40,7 @@ public class Patients extends Actions {
         datePatients.remove(number);
         namePet.remove(number);
         typePet.remove(number);
-        for(int i = number; i < idPatients.size(); i++ ) { //цикл для смещения id на единицу, чтобы не ломать последовательность
-            idPatients.set(i, idPatients.get(i) - 1);
-        }
+        Id.offsetId(idPatients, number); //метод из класса id на смещение id
         }
     }
 

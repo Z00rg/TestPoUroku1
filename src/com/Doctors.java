@@ -58,9 +58,7 @@ public class Doctors extends Actions{
         System.out.println("Вы удаляете: " + doctors.get(number));
         doctors.remove(number);
         idDoctors.remove(number);
-        for(int i = number; i < idDoctors.size(); i++) {
-            idDoctors.set(i, idDoctors.get(i) - 1);
-        }
+        Id.offsetId(idDoctors,number);
         }
         }
     }

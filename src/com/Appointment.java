@@ -76,9 +76,7 @@ public class Appointment extends Actions {
             appointmentDate.remove(number);
             appointmentTime.remove(number);
             status.remove(number);
-            for (int i = number; i < appointmentId.size(); i++) { //цикл для смещения id на единицу, чтобы не ломать последовательность
-                appointmentId.set(i, appointmentId.get(i) - 1);
-            }
+            Id.offsetId(appointmentId,number);
         }
 
     }
